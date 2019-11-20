@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
   View,
   Text,
   TouchableOpacity
 } from 'react-native';
-import { NavigationProps } from "../../interfaces"
+import { NavigationProps } from "~/interfaces"
 
 interface HomeProps extends NavigationProps {
   

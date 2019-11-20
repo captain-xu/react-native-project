@@ -1,4 +1,4 @@
-import HomeDetail from '../pages/Home/Detail'
+import HomeDetail from '~/pages/Home/Detail'
 
 export default {
   HomeDetail
