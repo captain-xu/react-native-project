@@ -5,13 +5,20 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "react-native start --port=8082",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "jetifier -r"
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.4"
+    "react-native": "0.61.4",
+    "react-native-gesture-handler": "^1.5.0",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.11",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.5.6"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -22,6 +29,7 @@
     "babel-jest": "^24.9.0",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
+    "jetifier": "^1.6.4",
     "metro-react-native-babel-preset": "^0.57.0",
     "react-native-typescript-transformer": "^1.2.13",
     "react-test-renderer": "16.9.0",

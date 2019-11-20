@@ -7,31 +7,14 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import Navigations from "./navigations"
 
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <View>
-          <Text style={styles.text}>TS Init</Text>
-        </View>
-      </SafeAreaView>
+      <Navigations />
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    color: '#333'
-  },
-});
 
 export default App;
