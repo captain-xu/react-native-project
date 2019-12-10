@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import { observer, inject } from 'mobx-react';
 import { NavigationProps } from "~/interfaces"
 import NameImg from './components/name-img'
 
@@ -19,6 +20,8 @@ interface HomeState {
 }
 
 // 类组件，需要继承React的Component或PureComponent
+@inject('home')
+@observer
 class Home extends Component<HomeProps, HomeState> {
   // 构造函数，可以不写
   constructor(props) {
@@ -31,11 +34,12 @@ class Home extends Component<HomeProps, HomeState> {
     }
   }
 
-  private changeName = (name) => {
+  private changeName = (name, text) => {
     if (name === this.state.name) {
       // 调用setState时，无论数据有没有发生改变，都会调用render，这里需要加下判断
       return
     }
+    this.props.home.changeText(text)
     // setState 改变state数据
     this.setState({name}, () => {
       // 这里是回调，在这里想干啥干啥
@@ -51,12 +55,13 @@ class Home extends Component<HomeProps, HomeState> {
     const { name } = this.state
     return (
       <View style={styles.container}>
+        <Text style={styles.nameText}>{this.props.home.text}</Text>
         <Text style={styles.nameText}>{name}</Text>
         {/* 组件 */}
         <NameImg name={name} onPress={this.toDetail} />
         <View style={styles.changeBtnWrap}>
-          <TouchableOpacity onPress={() => this.changeName('你的名字')}><Text>你的中文名</Text></TouchableOpacity>
-          <TouchableOpacity onPress={() => this.changeName('君の名は')}><Text>你的日文名</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => this.changeName('你的名字', '首页')}><Text>你的中文名</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => this.changeName('君の名は', '最初のページ')}><Text>你的日文名</Text></TouchableOpacity>
         </View>
       </View>
     );

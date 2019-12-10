@@ -4,6 +4,12 @@
   ],
   "plugins": [
     [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
       "babel-plugin-root-import",
       {
         "rootPathPrefix": "~",
