@@ -4,7 +4,7 @@ import Home from './home';
 export default class {
   public home: any = {}
 
-  constructor() {
+  constructor(initState = {}) {
     this.home = new Home();
   }
 }
