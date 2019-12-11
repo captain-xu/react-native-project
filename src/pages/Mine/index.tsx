@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import {BaseStatusBar, NavBar} from '~/components'
 import NavRight from './components/nav-right'
+import APIS from '~/apis'
 
 class Mine extends Component{
   private toMyList = () => {
@@ -14,6 +15,14 @@ class Mine extends Component{
 
   private toSearchList = () => {
     console.log('搜索')
+  }
+
+  componentDidMount() {
+    APIS.getMyInfo({}).then(res => {
+
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
   render() {
