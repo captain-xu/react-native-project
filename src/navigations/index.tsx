@@ -13,8 +13,18 @@ import MineIndex from '~/pages/Mine'
 import HomeScreens from './home'
 
 export const TabNavigator = createBottomTabNavigator({
-  Home: HomeIndex,
-  Mine: MineIndex,
+  Home: {
+    navigationOptions: {
+      tabBarLabel: '基础组件',
+    },
+    screen: HomeIndex
+  },
+  Mine:  {
+    navigationOptions: {
+      tabBarLabel: '其他说明',
+    },
+    screen: MineIndex
+  },
 }, {
     initialRouteName: "Home",
   }

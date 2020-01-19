@@ -1,5 +1,5 @@
-import HomeDetail from '~/pages/Home/Detail'
+import Button from '~/pages/Home/Button'
 
 export default {
-  HomeDetail
+  Button
 }
