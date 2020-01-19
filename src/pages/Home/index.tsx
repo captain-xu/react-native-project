@@ -30,7 +30,8 @@ class Home extends Component<HomeProps, HomeState> {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Button type='primary' onPress={() => this.jumpPage('Button')}>按钮</Button>
+        <Button type='primary' onPress={() => this.jumpPage('Theme')} style={{marginBottom: 30}}>主题色</Button>
+        <Button type='primary' onPress={() => this.jumpPage('Button')} style={{marginBottom: 30}}>按钮</Button>
       </ScrollView>
     );
   }
@@ -39,6 +40,7 @@ class Home extends Component<HomeProps, HomeState> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 16,
     paddingTop: config.STATUSBAR_HEIGHT
   },
 });

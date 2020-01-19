@@ -6,15 +6,15 @@ import {
 import { NavigationProps } from "~/interfaces"
 import { Button, Dialog } from 'opt-rn-components';
 
-interface HomeDetailProps extends NavigationProps {
+interface ButtonPageProps extends NavigationProps {
   [key: string]: any
 }
 
-interface HomeDetailState {
+interface ButtonPageState {
   [key: string]: any
 }
 
-class HomeDetail extends Component<HomeDetailProps, HomeDetailState> {
+class ButtonPage extends Component<ButtonPageProps, ButtonPageState> {
   onButtonPress = (content) => {
     Dialog.show({
       title: '点击了',
@@ -52,4 +52,4 @@ class HomeDetail extends Component<HomeDetailProps, HomeDetailState> {
   }
 };
 
-export default HomeDetail;
+export default ButtonPage;
